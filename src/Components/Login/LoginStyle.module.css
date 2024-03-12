@@ -1,0 +1,94 @@
+.mainContainer{   
+    /* width: 0px; */
+    background-color: silver;
+    /* height: 300px; */
+    display: flex;
+    justify-content: center; 
+    
+}
+  .contentContainer{
+      display: flex;
+      justify-content: center;
+      width: 20px;
+      height: 400px;
+      margin: 50px;
+      background-color: lightblue;
+      
+  
+  } 
+  .inputContainer{
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+     }
+  .loginButton{
+      display: flex;
+      justify-content: center;
+      margin:10px 30px;
+  } 
+  /* MEDIA QUERY HEIGHT*/
+  @media (max-height: 1200px) {
+      .mainContainer {
+        top: 8%;
+      }
+    }
+    @media (max-height: 1100px) {
+      .mainContainer {
+        top: 8.5%;
+        height: 100vh;
+      }
+    }
+    @media (max-height: 1050px) {
+      .mainContainer {
+        top: 9%;
+      }
+    }
+    @media (max-height: 975px) {
+      .mainContainer {
+        top: 10%;
+        height: 100vh;
+      }
+    }
+    @media (max-height: 915px) {
+      .mainContainer {
+        top: 11%;
+        height: 100vh;
+      }
+    }
+    @media (max-height: 800px) {
+      .mainContainer {
+        top: 11.5%;
+        /* height:86vh; */
+      }
+    }
+    @media (max-height: 750px) {
+      .mainContainer {
+        top: 12%;
+        height: 100vh;
+      }
+    }
+    @media (max-height: 715px) {
+      .mainContainer {
+        top: 12.5%;
+        /* height:85vh; */
+      }
+    }
+    @media (max-height: 680px) {
+      .mainContainer {
+        top: 13%;
+        height: 100vh;
+      }
+    }
+    @media (max-height: 660px) {
+      .mainContainer {
+        top: 14%;
+        /* height:84vh; */
+      }
+    }
+    @media (max-height: 660px) {
+      .mainContainer {
+        top: 15%;
+        height: 100vh;
+      }
+    }
+     

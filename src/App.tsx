@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import Listgroup from "./Components/Listgroup"
+// import Homepage from "./Components/Hompage/Hompage";
+// import TopNavBar from "./Components/NaviBar/TopNavBar";
+// import LoginForm from "./Components/MUILogin/LoginForm"
 
-function App() {
-  const [count, setCount] = useState(0)
+import Login from "./Components/Login/Login";
 
+// import Counter from "./Components/ClickCounter/Counter"
+// import LoginCard from "./Components/UserLogin/LoginCard"
+// import ReactDOM from "react-dom";
+// import { Provider } from "react-redux";
+// import store from "./Components/Redux and saga testing/store";
+
+
+const  App: React.FC= () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+       {/* <Provider store={store}> */}
+    <App />
+  
+      {/* <LoginCard /> */}
+       <Login/>
+     
+       {/* <TopNavBar/>
+       <Homepage/> */}
+       {/* </Provider> */}
+     
+    </div>
+  );
+};
+
+//{
+
+//   return (
+//     <>
+//     <div>
+   
+//       <LoginCard />
+//       {/* <Counter /> */}
+//     {/* <Listgroup/> */}
+    {/* <LoginForm/> */}
+//     </div>
+//      </>
+//   )
+// }
 
 export default App
