@@ -1,12 +1,19 @@
-import LoginCard from "./LoginForm";
-import Loginstyle from "./LoginStyle.module.css"
+import { Link } from "react-router-dom";
+import LoginForm from "./LoginForm";
+import Loginstyle from "./LoginStyle.module.css";
 
-function Login (){
-    return(
-        <div className={Loginstyle.mainContainer}>
-    <LoginCard />
+const Login: React.FC = () =>{
+  return (
+    <>
+    <div className={Loginstyle.mainContainer}>
+      <LoginForm />
+
+      {/* <button>
+    <Link to="/"> Login</Link>
+    </button> */}
     </div>
-    );
-};
+    </>
+  );
+}
 
 export default Login;

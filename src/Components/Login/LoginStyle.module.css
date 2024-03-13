@@ -1,94 +1,107 @@
-.mainContainer{   
-    /* width: 0px; */
-    background-color: silver;
-    /* height: 300px; */
-    display: flex;
-    justify-content: center; 
+.mainContainer {
+  width: 100%;
+  background-color: #DFF5FF;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  height: 630px;
     
+
+  }
+.header{
+    margin-bottom: 50px;
+    text-align:center;
 }
-  .contentContainer{
-      display: flex;
-      justify-content: center;
-      width: 20px;
-      height: 400px;
-      margin: 50px;
-      background-color: lightblue;
+.form{
+background-color: white;
+    margin-top: 15px;
+    width: 500px;
+    height: 500px;}
+.input{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.Button{
+    font-weight: 700;
+    margin-left: 60px;
+    width: 50%;
+}
+      /* MEDIA QUERY */
+    
+      @media (max-width: 2000px) {
+        /* .card {  
+          padding-bottom: 10px;
+          height: 93%;  
+        }
+        .graphContainer{
+          margin-bottom: 4%;
+          height: 51%;
+        } */
+      }
+      @media (max-width: 1800px) {
+        /* .ProjGraphContainer {
+          height: 97%; 
+        }
+        .graphContainer{
+          height: 53%;
+        } */
+      }
+      @media (max-width: 1600px) {
+        /* .card {  
+          height: 94%;  
+        }
+        .graphContainer{
+          margin-bottom: 4.5%;
+          height: 53%;
+        } */
+      }
+      @media (max-width: 1500px) {
+        /* .graphContainer{
+          margin-bottom: 5%;
+        }
+      }
+      @media (max-width: 1450px) {
+        .card {  
+          height: 95%;  
+        } */
+      }
+      @media (max-width: 1300px) {
+        /* .graphContainer{
+          margin-bottom: 5.5%;
+        } */
+      }
+      @media (max-width: 1200px) {
+        /* .card {  
+          height: 92%;  
+        }
+        .graphContainer{
+          height: 51.5%;
+        } */
+      }
+      @media (max-width: 1100px) {
+        /* .card {  
+          height: 93%;  
+        }
+        .graphContainer{
+          height: 52%;
+        } */
+      }
+      @media (max-width: 1050px) {
+        /* .graphContainer{
+          margin-bottom: 6%;
+        } */
+      }
+      @media (max-width: 950px) {
+        /* .graphContainer{
+          margin-bottom: 6.5%;
+        } */
+      }
+      @media (max-width: 850px) {
+        /* .nav{
+          margin: 10px;
+        } */
+      }
       
-  
-  } 
-  .inputContainer{
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: center;
-     }
-  .loginButton{
-      display: flex;
-      justify-content: center;
-      margin:10px 30px;
-  } 
-  /* MEDIA QUERY HEIGHT*/
-  @media (max-height: 1200px) {
-      .mainContainer {
-        top: 8%;
-      }
-    }
-    @media (max-height: 1100px) {
-      .mainContainer {
-        top: 8.5%;
-        height: 100vh;
-      }
-    }
-    @media (max-height: 1050px) {
-      .mainContainer {
-        top: 9%;
-      }
-    }
-    @media (max-height: 975px) {
-      .mainContainer {
-        top: 10%;
-        height: 100vh;
-      }
-    }
-    @media (max-height: 915px) {
-      .mainContainer {
-        top: 11%;
-        height: 100vh;
-      }
-    }
-    @media (max-height: 800px) {
-      .mainContainer {
-        top: 11.5%;
-        /* height:86vh; */
-      }
-    }
-    @media (max-height: 750px) {
-      .mainContainer {
-        top: 12%;
-        height: 100vh;
-      }
-    }
-    @media (max-height: 715px) {
-      .mainContainer {
-        top: 12.5%;
-        /* height:85vh; */
-      }
-    }
-    @media (max-height: 680px) {
-      .mainContainer {
-        top: 13%;
-        height: 100vh;
-      }
-    }
-    @media (max-height: 660px) {
-      .mainContainer {
-        top: 14%;
-        /* height:84vh; */
-      }
-    }
-    @media (max-height: 660px) {
-      .mainContainer {
-        top: 15%;
-        height: 100vh;
-      }
-    }
-     
+      

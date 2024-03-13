@@ -1,30 +1,18 @@
-// import Listgroup from "./Components/Listgroup"
-// import Homepage from "./Components/Hompage/Hompage";
-// import TopNavBar from "./Components/NaviBar/TopNavBar";
-// import LoginForm from "./Components/MUILogin/LoginForm"
-
+// import TopNavBar from "./Components/Navibar/TopNav"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login/Login";
+import Masterlist from "./Components/Masterlist/Masterlist";
 
-// import Counter from "./Components/ClickCounter/Counter"
-// import LoginCard from "./Components/UserLogin/LoginCard"
-// import ReactDOM from "react-dom";
-// import { Provider } from "react-redux";
-// import store from "./Components/Redux and saga testing/store";
-
-
-const  App: React.FC= () => {
+const App: React.FC = () => {
   return (
     <div>
-       {/* <Provider store={store}> */}
-    <App />
-  
-      {/* <LoginCard /> */}
-       <Login/>
-     
-       {/* <TopNavBar/>
-       <Homepage/> */}
-       {/* </Provider> */}
-     
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+
+          <Route path="/masterlist" element={<Masterlist />} />
+        </Routes>
+      </Router>
     </div>
   );
 };
@@ -34,14 +22,16 @@ const  App: React.FC= () => {
 //   return (
 //     <>
 //     <div>
-   
+
 //       <LoginCard />
 //       {/* <Counter /> */}
 //     {/* <Listgroup/> */}
-    {/* <LoginForm/> */}
+{
+  /* <LoginForm/> */
+}
 //     </div>
 //      </>
 //   )
 // }
 
-export default App
+export default App;
