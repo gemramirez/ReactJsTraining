@@ -1,10 +1,21 @@
-import { ListItemIcon, MenuItem } from "@mui/material";
 import TopNavStyle from "./TopNavStyle.module.css";
 import { MdAccountCircle } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { Logout } from "@mui/icons-material";
+import { logout } from "../../Redux/Saga/sessionSaga";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useDispatch } from "react-redux";
 
 const TopNav: React.FC = () => {
+
+  const dispatch =useDispatch();
+  
+  // Handle logout when the button is clicked
+
+  const handleLogout = () => {
+    // Dispatch the logout action
+    dispatch(logout());
+  };
+
+  
   return (
     <>
       <div className={TopNavStyle.mainContainer}>
@@ -17,12 +28,14 @@ const TopNav: React.FC = () => {
             </span>
             <li>gramirez</li>
 
-              <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
-                  <ListItemIcon>
-                    <Logout fontSize="medium" style={{ color: "red" }} />
-                  </ListItemIcon>
-                  Logout
-              </Link>
+                 <button className={TopNavStyle.logout} onClick={handleLogout}>
+                      <div className={TopNavStyle.logoutSpanContainer}>
+                        <span className={TopNavStyle.logoutIcon}>
+                          <LogoutIcon />
+                        </span>
+                        <span className={TopNavStyle.logoutText}>Log out</span>
+                      </div>
+                    </button>
              
           </ul>
         </div>
