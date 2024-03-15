@@ -1,14 +1,13 @@
 .mainContainer {
-  background-color: white;
   display: flex;
-  opacity: 70%;
+  justify-content: center;
   /* justify-content:; */
   box-shadow: 0px 2px 5px lightblue;
 }
 
 .contentContainer {
-  display: flex;
-  justify-content: center;
+  color: black;
+
 }
 
 ul {
@@ -25,12 +24,12 @@ li {
 }
 
 .nav {
-  margin-left: 1050px;
+  margin-left: 1000px;
 }
 .icon {
   width: 30px;
   height: 30px;
-  margin-top: 4px;
+  margin-top: 9px;
   margin-left: 20px;
 }
 /* MEDIA QUERY HEIGHT*/

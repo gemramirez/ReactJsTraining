@@ -1,4 +1,4 @@
-.mainContainer {
+/* .mainContainer {
   width: 100%;
   background-color: #DFF5FF;
   display: flex;
@@ -28,80 +28,4 @@ background-color: white;
     margin-left: 60px;
     width: 50%;
 }
-      /* MEDIA QUERY */
-    
-      @media (max-width: 2000px) {
-        /* .card {  
-          padding-bottom: 10px;
-          height: 93%;  
-        }
-        .graphContainer{
-          margin-bottom: 4%;
-          height: 51%;
-        } */
-      }
-      @media (max-width: 1800px) {
-        /* .ProjGraphContainer {
-          height: 97%; 
-        }
-        .graphContainer{
-          height: 53%;
-        } */
-      }
-      @media (max-width: 1600px) {
-        /* .card {  
-          height: 94%;  
-        }
-        .graphContainer{
-          margin-bottom: 4.5%;
-          height: 53%;
-        } */
-      }
-      @media (max-width: 1500px) {
-        /* .graphContainer{
-          margin-bottom: 5%;
-        }
-      }
-      @media (max-width: 1450px) {
-        .card {  
-          height: 95%;  
-        } */
-      }
-      @media (max-width: 1300px) {
-        /* .graphContainer{
-          margin-bottom: 5.5%;
-        } */
-      }
-      @media (max-width: 1200px) {
-        /* .card {  
-          height: 92%;  
-        }
-        .graphContainer{
-          height: 51.5%;
-        } */
-      }
-      @media (max-width: 1100px) {
-        /* .card {  
-          height: 93%;  
-        }
-        .graphContainer{
-          height: 52%;
-        } */
-      }
-      @media (max-width: 1050px) {
-        /* .graphContainer{
-          margin-bottom: 6%;
-        } */
-      }
-      @media (max-width: 950px) {
-        /* .graphContainer{
-          margin-bottom: 6.5%;
-        } */
-      }
-      @media (max-width: 850px) {
-        /* .nav{
-          margin: 10px;
-        } */
-      }
-      
-      
+  */

@@ -61,32 +61,34 @@ React.useEffect(() => {
   return (
     <>
       {" "}
-      <div className="h-[100vh] bg-white">
-      <div className="	">
-        <form className="" onSubmit={handleLogin}>
-          <div style={{ padding: "50px" }}>
+      {/* <div className="h-[100vh] w-[100vh]"> */}
+      <div className="h-[100vh] w-[100%]">
+      <div className="h-[100%] bg-cover bg-center w-[50%]" style={{  backgroundImage: `url('Paperchain_instagram.jpg')`}}>
+        <form className="pt-[120px] mx-[635px] bg-white w-[100%] h-[100%] p-[50px]" onClick={handleLogin}>
             <div>
-              <h1 className="">Login</h1>
+              <h1 className="flex justify-center mb-10 text-5xl font-semibold">Login</h1>
             </div>
-
-            <div>
+            <div className="mt-10 flex justify-center">
               <TextField
-                className="bg-blue-300"
+                className="flex justify-center mb-10"
                 // required
                 id="outlined-required"
                 label="Username"
                 type="text"
                 name="username"
                 value={username}
+                autoComplete="current-email"
                 onChange={(e) => setUsername(e.target.value)}
                 error={!isValid}
                 InputProps={{
                     endAdornment: errorIcon,
                 }}
               />
-            </div>
-            <div className="">
+              </div>
+       
+              <div className="mt-4 flex justify-center">
               <TextField
+              className=""
                 id="outlined-password-input"
                 label="Password"
                 type="password"
@@ -100,17 +102,17 @@ React.useEffect(() => {
                             }}
               />
             </div>
-            <div className="">
+            <div className="mt-4 flex justify-center ">
               {/* <Link to="/masterlist"> */}
-                <Button type="submit" variant="contained">
+                <Button  type="submit" variant="contained">
                   Login
                 </Button>
               {/* </Link> */}
-            </div>
-          </div>
+              </div>
         </form>
       </div>
       </div>
+      
     </>
   );
 };
