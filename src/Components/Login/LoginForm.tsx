@@ -61,9 +61,9 @@ React.useEffect(() => {
   return (
     <>
       {" "}
-      {/* <div className="h-[100vh] w-[100vh]"> */}
+      <div className="h-[100%] w-[100]">
       <div className="h-[100vh] w-[100%] flex justify-center">
-      <div className="h-[100%] bg-cover bg-center w-[100%]" style={{  backgroundImage: `url('Untitled design.png')`}}>
+      {/* <div className="h-[100%] bg-cover bg-center w-[100%]" style={{  backgroundImage: `url('Untitled design.png')`}}> */}
         <form className="mt-[120px] m-auto w-[500px] h-[500px] p-[50px] bg-white rounded-xl	shadow-inner"  onClick={handleLogin}>
             <div>
               <h1 className="flex justify-center pt-10 mb-10 text-5xl font-semibold">Login</h1>

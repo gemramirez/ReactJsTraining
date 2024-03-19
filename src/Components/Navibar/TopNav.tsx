@@ -67,7 +67,7 @@ const TopNav: React.FC = () =>{
   <div className="navbar-end pr-[50px] z-10">
         <details >
           <summary>Profile</summary>
-          <ul className="mt-5 rounded-md  p-2 absolute bg-orange-100 w-[100px]">
+          <ul className="mt-5 rounded-md  p-2 absolute bg-blue-950 w-[100px]">
           <li> </li>
             <li>gramirez</li>
             <li  onClick={handleLogout}><a>Logout</a></li>

@@ -130,9 +130,8 @@ const Masterlist: React.FC <UserTableProps> = (props) => {
 console.log(get)
   return (
     <>
-      <TopNav />
-      <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-        <div style={{ flex: 0, width: "100%" }}>
+      <div className=" flex flex-col h-[100vh] w-[1200px] bg-white" >
+        <div>
           <DataGrid
             rows={data}
             getRowId={(row) => row.emp_id}
