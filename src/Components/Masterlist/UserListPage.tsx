@@ -10,7 +10,7 @@ const UserListPage: React.FC =() =>{
            
            <div className="flex">   {/* <TopNav /> */}
             <SideNav/>
-
+        
            <UserLists/>
 
         {/*<div className="w-[1200px]">

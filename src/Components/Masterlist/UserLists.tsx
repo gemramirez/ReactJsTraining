@@ -31,10 +31,12 @@ const UserLists: React.FC = () => {
   console.log(users);
   return (
     <>
-      <div>
-        <div className="w-[100%] h-[100%]" >
+      <div className="">
+      <h1 className=" p-9 text-2xl font-semibold z-10"> USERLIST</h1>
+
+        <div className="w-[100%] h-[100%] " >
           <table className="table">
-            <thead className="text-amber-50 text-center	">
+            <thead className=" text-amber-50 text-center	">
               <tr>
                 <th>
                   <input
