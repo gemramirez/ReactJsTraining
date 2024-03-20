@@ -122,7 +122,7 @@ const Masterlist: React.FC <UserTableProps> = (props) => {
   const dispatch = useDispatch();
   // const [rows, setRows] = React.useState<GridRowsProp>(data);
   
-  React.useEffect(() => {
+  React.useEffect(() => {x  
     dispatch(getUsersFetch());
   }, [dispatch]);
  

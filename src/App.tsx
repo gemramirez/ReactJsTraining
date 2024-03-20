@@ -11,57 +11,57 @@ import { setAuthenticationStatus, setUser } from "./Redux/State/sessionState";
 import UserListPage from "./Components/Masterlist/UserListPage";
 
 //try
-import { useFetchClothingsQuery } from "./Components/dressAPI_REACTTOOLKIT/dress-api-slice";
+// import { useFetchClothingsQuery } from "./Components/dressAPI_REACTTOOLKIT/dress-api-slice";
 //try
 const App: React.FC = () => {
 
-  //try
+  // //try
 
-  const {data = [], isFetching} = useFetchClothingsQuery();
+  // const {data = [], isFetching} = useFetchClothingsQuery();
     
-  //try
+  // //try
 
 
 
   
-    // // const isAuthenticated = useSelector((state: RootState) => state.sessionReducer.isAuthenticated);
-    // // console.log("isAuthenticated", isAuthenticated);
-    // // const cookies = new Cookies();
-    // // const dispatch = useDispatch(); // Get the dispatch function from Redux
+    const isAuthenticated = useSelector((state: RootState) => state.sessionReducer.isAuthenticated);
+    console.log("isAuthenticated", isAuthenticated);
+    const cookies = new Cookies();
+    const dispatch = useDispatch(); // Get the dispatch function from Redux
   
-    // // useEffect(() => {
-    // //   // Check if the user is authenticated in localStorage
-    // //   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'false';
+    useEffect(() => {
+      // Check if the user is authenticated in localStorage
+      const isAuthenticated = localStorage.getItem('isAuthenticated') === 'false';
   
-    // //   if (isAuthenticated) {
-    // //     // If the user is authenticated, call the login API to get user info
-    // //     const username = cookies.get('username'); // Retrieve the username from localStorage
-    // //     const password = cookies.get('password'); // Replace with the actual way you retrieve the password or token
+      if (isAuthenticated) {
+        // If the user is authenticated, call the login API to get user info
+        const username = cookies.get('username'); // Retrieve the username from localStorage
+        const password = cookies.get('password'); // Replace with the actual way you retrieve the password or token
   
-    // //     if (isAuthenticated && username && password) {
-    // //       apiLogin(username, password)
-    // //         .then((userData) => {
-    // //           if (userData) {
-    // //             // Dispatch an action to update the user state
-    // //             dispatch(setUser(userData)); // You should define the setUser action
-    // //             // Dispatch an action to update the authentication status
-    // //             dispatch(setAuthenticationStatus(true)); // You should define the setAuthenticationStatus action
+        if (isAuthenticated && username && password) {
+          apiLogin(username, password)
+            .then((userData) => {
+              if (userData) {
+                // Dispatch an action to update the user state
+                dispatch(setUser(userData)); // You should define the setUser action
+                // Dispatch an action to update the authentication status
+                dispatch(setAuthenticationStatus(true)); // You should define the setAuthenticationStatus action
   
-    // //           }
-    // //         })
-    // //         .catch((error) => {
-    // //           console.error('Error while checking authentication:', error);
-    // //         });
-    // //     }
-    // //   }
-    // // }, [cookies, dispatch]);
+              }
+            })
+            .catch((error) => {
+              console.error('Error while checking authentication:', error);
+            });
+        }
+      }
+    }, [cookies, dispatch]);
 
-    // // // console.log(username, password, is)
+    // console.log(username, password, is)
   
     return (
     
       <div>
-        {/* try */}
+        {/* try
        
           <div>
            <p> Number of Clothes List: [data.length]</p>
@@ -85,29 +85,29 @@ const App: React.FC = () => {
            </table>
           </div>
         
-        {/* try */}
+        {/* try 
         </div>
-        );
-    // //   <BrowserRouter>
-		// // 	<Routes>
-		// // 		{isAuthenticated ? (
-		// // 			<>
-		// // 				<Route path="/" element={<Navigate to="/userlistpage" />} />
-    // //         <Route path="/userlistpage/*" element={<UserListPage />} />
+        ); */}
+       <BrowserRouter>
+		 	<Routes>
+		 		{isAuthenticated ? (
+		 			<>
+		 				<Route path="/" element={<Navigate to="/userlistpage" />} />
+             <Route path="/userlistpage/*" element={<UserListPage />} />
 						
-		// // 			</>
-		// // 		) : (
-		// // 			<>
-		// // 				<Route index element={<Login />} />
-		// // 				<Route path="/" element={<Login />} />
-		// // 				<Route path="*" element={<Navigate to="/" />} />
-		// // 			</>
-		// // 		)}
-		// // 	</Routes>
-		// // </BrowserRouter>
+		 			</>
+				) : (
+		 			<>
+		 				<Route index element={<Login />} />
+		 				<Route path="/" element={<Login />} />
+		 				<Route path="*" element={<Navigate to="/" />} />
+		 			</>
+		 		)}
+		 	</Routes>
+		 </BrowserRouter>
         
-    // // </div>
-    // )
+   </div>
+    )
         }
 
 export default App;

@@ -15,9 +15,9 @@ interface Clothing {
 
         reducerPath:'api',
         baseQuery:fetchBaseQuery({
-            baseUrl:'https://fakestoreapi.com/v1',
+            baseUrl:'https://fakestoreapi.com/products',
             prepareHeaders(headers){
-                headers.set('x-api-key', CLOTHING_API_KEY);
+                // headers.set('x-api-key', CLOTHING_API_KEY);
 
                 return headers;
             }
@@ -26,7 +26,7 @@ interface Clothing {
             return {
                 fetchClothings:builder.query<Clothing[], number|void>({
                     query(limit=10){
-                        return`/Clothing?limit=${limit}`;
+                        return`/products?limit=${limit}`;
                     },
                 }),
                 
