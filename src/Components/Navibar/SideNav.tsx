@@ -25,11 +25,11 @@ const SideNav: React.FC = () => {
   ];
   return (
     <>
-      <div className="flex ">
+      <div className="flex h-[100vh]">
         <div
           className={`${
             open ? "w-72" : "w-20" 
-          } duration-300 w-72 h-[100vh] bg-white relative`}
+          } duration-300 w-20 h-[100vh] bg-white relative`}
         >
           <IoIosArrowDroprightCircle
             className={`ml-[50px] absolute cursor-pointer  -right-3 top-9 w-10 h-10 rounded-full border-2 border-red ${

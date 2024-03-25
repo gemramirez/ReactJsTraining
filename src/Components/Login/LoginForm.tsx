@@ -17,19 +17,12 @@ const LoginForm: React.FC = () => {
   const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [errorIcon, setErrorIcon] = useState<JSX.Element>();
-  const [helperText, setHelperText] = useState("");
 
   const errorMessage = useSelector((state: RootState) => state.sessionReducer.error);
   const [error, setErrorMessage] = React.useState<string | undefined>("");
 
 
-  const navigate = useNavigate();
-
-  /* THIS LINE IS USED TO FETCHED THE LOGGED IN USER'S INFO */
-  const loggedUser = useSelector((state: RootState) => {
-    return state.sessionReducer.user;
-});
-
+ 
 /* THIS LINE IS USED TO FETCHED THE AUTHENTICATION STATUS */
 const isAuthenticated = useSelector((state: RootState) => {
     return state.sessionReducer.isAuthenticated;
