@@ -1,14 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getUsersFetch } from "../../Redux/State/userState";
 import { RootState } from "../../Redux/Store/Store";
 import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { FaKey } from "react-icons/fa";
-import { updateUserInfo } from "../../Redux/Saga/userSaga";
 
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -25,9 +23,6 @@ interface User {
   reg_date: string;
   // Add more properties as needed
 }
-
-
-//
 
 
 
@@ -74,83 +69,52 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-    
+
 ///
 const UserLists: React.FC = () => {
   // as User[] para makuha yung mga objects inside interface User at para maging type yung mga data(fname) sa table data
   const users = useSelector((state: RootState) => state.userReducer.users) as User[];
   const dispatch = useDispatch();
-  // const [editRow, setEditRow] = useState();
-
 
   React.useEffect(() => {
     dispatch(getUsersFetch());
   }, [dispatch]);
 
-
-  //   const handleEdit = (event: React.FormEvent) => {
-  //     event.preventDefault();
-  //     dispatch(updateUserInfo({ fname, lname }));
-
-  // };
-
-  //
-
-
-  const [editedUsers, setEditedUsers] = useState<User[]>([]);
-
-  React.useEffect(() => {
-    dispatch(getUsersFetch());
-  }, [dispatch]);
-
-  const handleEdit = (index: number) => {
-    const updatedUsers = [...users]; // Make a copy of users array
-    updatedUsers[index] = { ...users[index] }; // Make a copy of the user object to avoid mutating original state
-    setEditedUsers(updatedUsers);
-  };
-
-  const handleInputChange = () : any => {
-    const updatedUsers = [...editedUsers];
-    
-    setEditedUsers(updatedUsers);
-  };
-
-  // const handleSave = (index: number) => {
-  //   dispatch(updateUserInfo(editedUsers[index]));
-  //   setEditedUsers([]); // Reset edited users array after saving
-  // };
-  //
-  console.log(users);
   return (
     <>
-      <div className="w-[100%]">
+      <div className="w-[2000px]">
         <div className="flex justify-center items-center">
-        <h1 className=" p-9 text-2xl font-semibold z-10"> USERLIST</h1>
-        <Box sx={{ flexGrow: 1 }}>
-      {/* <AppBar position="static"> */}
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            // color="inherit"
-            aria-label="open drawer"
-            // sx={{ mr: 2 }}
-          ></IconButton>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          </Toolbar>
-          {/* </AppBar> */}
+          <h1 className=" p-9 text-2xl font-semibold z-10"> USERLIST</h1>
+          <Box sx={{ flexGrow: 1 }}>
+            {/* <AppBar position="static"> */}
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
+                // color="inherit"
+                aria-label="open drawer"
+              // sx={{ mr: 2 }}
+              ></IconButton>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Search>
+            </Toolbar>
+            {/* </AppBar> */}
           </Box>
-          </div>
-        <div className="w-[100%] h-[100%] " >
-          <table className="table">
+
+        </div>
+        <div className="flex">
+          <span className="px-[70px] py-3 rounded-2xl bg-sky-100	text-black mr-2">filter</span>
+          <span className="px-[70px] py-3 rounded-2xl bg-sky-100	text-black mr-2">sort</span>
+        </div>
+        <div className="w-[1500px] h-[1000px]" >
+          <div className="table">
             <thead className=" text-amber-50 text-center">
               <tr>
                 <th>
@@ -167,6 +131,8 @@ const UserLists: React.FC = () => {
                 <th>Business Unit </th>
                 <th>Department </th>
                 <th>Created </th>
+                <th>Project </th>
+                <th>Project Status </th>
                 <th>Action </th>
               </tr>
             </thead>
@@ -179,7 +145,7 @@ const UserLists: React.FC = () => {
                       className=" checkbox checkbox-info"
                     />
                   </td>
-                  <td ><input type="text" id="fname" name="fname" className="bg-inherit text-center" onChange={handleInputChange}
+                  <td ><input type="text" id="fname" name="fname" className="bg-inherit text-center"
                     value={user.fname} /></td>
                   <td><input className="bg-inherit text-center"
                     value={user.lname} /></td>
@@ -189,6 +155,8 @@ const UserLists: React.FC = () => {
                   <td><input className="bg-inherit text-center" value={user.section_name} /></td>
                   <td><input className="bg-inherit text-center" value={user.dept_name} /></td>
                   <td><input className="bg-inherit text-center" value={user.reg_date} /></td>
+                  <td className="bg-inherit text-center"><div className="bg-green-200	text-black rounded-xl">   active</div> <div className="bg-gray-200	text-black rounded-xl px-1 mt-1">inactive</div></td>
+                  <td className="bg-inherit text-center">null</td>
 
                   <td className="flex justify-between mt-1">
                     <button>
@@ -202,7 +170,7 @@ const UserLists: React.FC = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </div>
         </div>
       </div>
     </>
@@ -210,3 +178,18 @@ const UserLists: React.FC = () => {
 };
 
 export default UserLists;
+
+
+
+{/* 
+        <div className="flex justify-center items-center m-9">
+      <button className="bg-white text-neutral-950 mr-2 " onClick={()=>{
+        dispatch(getAllUser()) 
+        dispatch(falseButton())
+        }} > show users </button>
+        { userListTrue &&  <button className="bg-red-400 text-neutral-950 ml-3">hide users</button>}
+        
+        <button className="bg-white text-neutral-950 mr-2 " onClick={()=>dispatch(toggleButton())} > show </button>
+        { buttonsd &&  <button className="bg-red-400 text-neutral-950 ml-3">hide</button>}
+          </div>
+         */}

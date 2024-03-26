@@ -1,17 +1,22 @@
 import SideNav from "../Navibar/SideNav";
-import TopNav from "../Navibar/TopNav";
-import Masterlist from "./Masterlist";
-import UserTableProps from './Masterlist'; // Import UserTableProps type from its file
+// import TopNav from "../Navibar/TopNav";
+// import Masterlist from "./Masterlist";
+// import UserTableProps from './Masterlist'; // Import UserTableProps type from its file
 import UserLists from "./UserLists";
 
 const UserListPage: React.FC =() =>{
     return(
         <>
            
-           <div className="flex ">   {/* <TopNav /> */}
+           <div className="flex">   {/* <TopNav /> */}
             <SideNav/>
-        
-           <UserLists/>
+        {/* <DataGridProDemo/> */}
+          
+            
+           <UserLists />
+
+
+         
 
         {/*<div className="w-[1200px]">
 

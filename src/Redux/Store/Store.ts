@@ -4,6 +4,7 @@ import rootSaga from '../Saga/rootSaga';
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from '../State/userState'
 import sessionReducer from '../State/sessionState';
+import { buttonReducer, usersReducer } from '../State/StateV2/userStateV2';
 // type Props = {}
 // import { apiSlice } from '../../Components/dressAPI_REACTTOOLKIT/dress-api-slice';
 // const getDefaultMiddleware = createSagaMiddleware();
@@ -15,6 +16,8 @@ const Store= configureStore( {
       userReducer: userReducer,
       sessionReducer: sessionReducer,
       // [apiSlice.reducerPath]: apiSlice.reducer
+      usersReducer:usersReducer,
+      buttonReducer:buttonReducer
 
     },
     middleware: [saga],
