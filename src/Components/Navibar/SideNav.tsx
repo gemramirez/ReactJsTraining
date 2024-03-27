@@ -40,7 +40,7 @@ const SideNav: React.FC = () => {
         <div
           className={`${
             open ? "w-72" : "w-20" 
-          } duration-300 w-20 h-[100vh] bg-white relative`}
+          } duration-300 w-20 h-[100vh] md:h-[100vh] sm:[] lg:[100vh] xl:[100vh] bg-white relative`}
         >
           <IoIosArrowDroprightCircle
             className={`ml-[50px] absolute cursor-pointer  -right-3 top-9 w-10 h-10 rounded-full border-2 border-red ${
@@ -48,15 +48,15 @@ const SideNav: React.FC = () => {
             }`}
             onClick={() => setOpen(!open)}
           />
-          <div className="flex gap-x-4 items-center m-1 w-[260px]">
+          <div className="flex gap-x-4 items-center m-1 w-[260px] ">
             <img
               src="logo.png "
               alt=""
               className={` cursor-pointer duration-300 ml-2 w-9`}
             />
             <h1
-              className={`text-blue-950 origin-left font-medium text-xl w-[200px] duration-500 ${
-                !open && "scale-0"
+              className={`text-blue-950 origin-left font-medium text-xl w-[200px] duration-500  ${
+                !open && "hidden "
               }`}
             >
               Control Center
@@ -73,7 +73,7 @@ const SideNav: React.FC = () => {
               </li>
             ))}
           </ul>
-          <div className="absolute bottom-0 left-0 mb-10 ml-2">
+          <div className="fixed  bottom-0 left-0 mb-10 ml-2">
             <div className="rounded-md  p-2  text-blue-950 w-[100px]">
 
               <div className="flex justify-between items-center gap-1 text-center">

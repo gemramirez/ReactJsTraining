@@ -9,6 +9,8 @@ import { RootState } from "./Redux/Store/Store";
 import { apiLogin } from "./Redux/Saga/sessionSaga";
 import { setAuthenticationStatus, setUser } from "./Redux/State/sessionState";
 import UserListPage from "./Components/Masterlist/UserListPage";
+import DeleteModal from "./Components/Alert/DeleteModal";
+// import AddnewUser from "./Components/Masterlist/AddnewUser";
 
 
 const App: React.FC = () => {
@@ -70,6 +72,7 @@ const App: React.FC = () => {
               <Route path="*" element={<Navigate to="/" />} />
             </>
           )}
+          <Route path="/deletemodal" element={<DeleteModal />} />
         </Routes>
       </BrowserRouter>
 

@@ -1,4 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import {userList} from "../../Components/data"
+// export const adduserSlice = createSlice({
+// 	name:"addusers",
+// 	initialState:
+// 		userList,
+	
+// 	reducers:{
+// 		addUser:(state, action) => {
+// 			console.log(action)
+// 			// state.push(action.payload )
+// 		}
+// 	}
+		
+// 	}
+// )
+
+// export const {addUser} = adduserSlice.actions
+// export const adduser=adduserSlice.reducer;
+
+// import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
 	name: "users",

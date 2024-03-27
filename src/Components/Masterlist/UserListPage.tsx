@@ -1,4 +1,5 @@
 import SideNav from "../Navibar/SideNav";
+// import AddnewUSer from "./AddnewUser";
 // import TopNav from "../Navibar/TopNav";
 // import Masterlist from "./Masterlist";
 // import UserTableProps from './Masterlist'; // Import UserTableProps type from its file
@@ -8,7 +9,7 @@ const UserListPage: React.FC =() =>{
     return(
         <>
            
-           <div className="flex">   {/* <TopNav /> */}
+           <div className="flex gap-4 ">   {/* <TopNav /> */}
             <SideNav/>
         {/* <DataGridProDemo/> */}
           
@@ -24,7 +25,10 @@ const UserListPage: React.FC =() =>{
             <Masterlist data={[]} />
         {/* </div> *
         </div> */}
+
+       
         </div>
+        {/* <AddnewUSer/> */}
         </>
 
     );

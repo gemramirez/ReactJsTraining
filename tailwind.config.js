@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     screens: {
-      'sm': '320px',
+      'sm': '640px',
       // => @media (min-width: 320px) { ... }
 
       'md': '768px',
@@ -21,6 +21,8 @@ export default {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
+
+    
     extend: {},
   },
   plugins: [require("daisyui")],
