@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsersFetch } from "../../Redux/State/userState";
 import { RootState } from "../../Redux/Store/Store";
@@ -13,6 +13,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Box } from "@mui/material";
 import { FaFilter } from "react-icons/fa";
 import { MdOutlineSort } from "react-icons/md";
+import DeleteModal from "../Alert/DeleteModal";
 // import DeleteModal from "../Alert/DeleteModal";
 
 
@@ -74,6 +75,12 @@ const UserLists: React.FC = () => {
   const users = useSelector((state: RootState) => state.userReducer.users) as User[];
   const dispatch = useDispatch();
 
+  const [delModal, setDelModal] = useState(false);
+  const [showEmpId, setShowEmpId] = useState(null)
+
+
+
+
   React.useEffect(() => {
     dispatch(getUsersFetch());
   }, [dispatch]);
@@ -134,14 +141,14 @@ const UserLists: React.FC = () => {
               {users.map((user, index) => (
                 <tr key={index}>
                   <td><input type="checkbox" className="checkbox checkbox-info" /></td>
-                  <td><input type="text" id="fname" name="fname" className="w-28 bg-inherit text-center" value={user.fname} /></td>
-                  <td><input className="w-28 bg-inherit text-center" value={user.lname} /></td>
-                  <td><input className="w-28 bg-inherit text-center" value={user.position_sh_name} /></td>
-                  <td><input className="w-28 bg-inherit text-center" value={user.email} /></td>
-                  <td><input className="w-28 bg-inherit text-center" value={user.username} /></td>
-                  <td><input className="w-28 bg-inherit text-center" value={user.section_name} /></td>
-                  <td><input className="w-28 bg-inherit text-center" value={user.dept_name} /></td>
-                  <td><input className="w-150 bg-inherit text-center" value={user.reg_date} /></td>
+                  <td><input type="text" id="fname" name="fname" className="w-28 bg-inherit text-center" defaultValue={user.fname}  /></td>
+    <td><input type="text" className="w-28 bg-inherit text-center" defaultValue={user.lname}  /></td>
+    <td><input type="text" className="w-28 bg-inherit text-center" defaultValue={user.position_sh_name}  /></td>
+    <td><input type="text" className="w-28 bg-inherit text-center" defaultValue={user.email} /></td>
+    <td><input type="text" className="w-28 bg-inherit text-center" defaultValue={user.username}  /></td>
+    <td><input type="text" className="w-28 bg-inherit text-center" defaultValue={user.section_name}  /></td>
+    <td><input type="text" className="w-28 bg-inherit text-center" defaultValue={user.dept_name} /></td>
+    <td><input type="text" className="w-150 bg-inherit text-center" defaultValue={user.reg_date}  /></td>
                   <td >
                     <div className="bg-green-200 text-black rounded-xl mx-2">active</div>
                    </td> 
@@ -150,12 +157,14 @@ const UserLists: React.FC = () => {
                   <td className="w-28 bg-inherit text-center">null</td>
                   <td className="flex justify-between items-center mt-4">
                     <button><MdModeEdit className="w-6 h-6" /></button>
-                    <button><MdDelete className="w-6 h-6" /> </button>
+                    <button><MdDelete  className="w-6 h-6" onClick={()=>{setDelModal(prev=>!prev)} }/> </button>
                     <button><FaKey className="w-6 h-6" /></button>
                   </td>
                 </tr>
               ))}
+
             </tbody>
+           {delModal &&  <DeleteModal setDelModal={setDelModal}/>}
           </table>
         </div>
       </div>

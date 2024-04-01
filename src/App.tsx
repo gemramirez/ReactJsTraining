@@ -57,6 +57,8 @@ const App: React.FC = () => {
   return (
 
     <div>
+
+      {/* <DeleteModal/> */}
       <BrowserRouter>
         <Routes>
           {isAuthenticated ? (
